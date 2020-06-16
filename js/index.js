@@ -18,18 +18,25 @@ if(portrait){
 
 button.addEventListener("click", handleClick)
 
-let i 
+let pop = new Audio("../audio/pop.mp3")
 let time = 60;
+let i 
 button.innerHTML = time;
+
 function handleClick(e){
     let actualTime = time;
     button.innerHTML = actualTime;
     clearInterval(i)
-    i = setInterval(countSecond, 1000);
+    i = setInterval(countSecond, 200);
+    pop.play()
     
     function countSecond(){
         actualTime--;
+        if(actualTime < 10 || actualTime == 30)
+            pop.play()
         button.innerHTML = actualTime;
+        if(actualTime == 0)
+            clearInterval(i)
     }
 }
 
