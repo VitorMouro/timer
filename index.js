@@ -16,7 +16,23 @@ if(portrait){
     button.style.height = viewport_height.toString() + "px"
 }
 
-console.log(button.style.width, button.style.height)
+button.addEventListener("click", handleClick)
+
+let i 
+let time = 60;
+button.innerHTML = time;
+function handleClick(e){
+    let actualTime = time;
+    button.innerHTML = actualTime;
+    clearInterval(i)
+    i = setInterval(countSecond, 1000);
+    
+    function countSecond(){
+        actualTime--;
+        button.innerHTML = actualTime;
+    }
+}
+
 
 
 
