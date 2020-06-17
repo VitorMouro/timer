@@ -19,7 +19,8 @@ if(portrait){
 button.addEventListener("click", handleClick)
 
 let pop = new Audio("https://www.vitormouro.dev/timer/audio/pop.mp3")
-let beeps = new Audio("https://www.vitormouro.dev/timer/audio/beeps.mp3")
+// let beeps = new Audio("https://www.vitormouro.dev/timer/audio/beeps.mp3")
+let beeps = new Audio("../audio/beeps.mp3")
 let time = prompt("Definir tempo do timer em segundos:");
 let i 
 button.innerHTML = "START";
@@ -33,7 +34,7 @@ function handleClick(e){
     
     function countSecond(){
         actualTime--;
-        if(actualTime < 5 || actualTime == time/2)
+        if((actualTime <= 5 && actualTime > 0) || actualTime == time/2)
             pop.play()
         button.innerHTML = actualTime;
         if(actualTime <= 0){

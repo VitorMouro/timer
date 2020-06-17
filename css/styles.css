@@ -15,7 +15,7 @@ html, body {
 #button {
     border-radius: 50%;
     outline: 0;
-    background-color: rgb(160, 0, 0);
+    background-color: rgb(190, 0, 0);
     border-color: white;
     border-width: 2px;
     font-size: 1000%;
@@ -23,5 +23,5 @@ html, body {
 }
 
 #button:active {
-    background-color: rgb(100, 0, 0);
+    background-color: rgb(150, 0, 0);
 }
