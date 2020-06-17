@@ -19,8 +19,7 @@ if(portrait){
 button.addEventListener("click", handleClick)
 
 let pop = new Audio("https://www.vitormouro.dev/timer/audio/pop.mp3")
-// let beeps = new Audio("https://www.vitormouro.dev/timer/audio/beeps.mp3")
-let beeps = new Audio("../audio/beeps.mp3")
+let beeps = new Audio("https://www.vitormouro.dev/timer/audio/beeps.mp3")
 let time = prompt("Definir tempo do timer em segundos:");
 let i 
 button.innerHTML = "START";
