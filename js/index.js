@@ -89,17 +89,27 @@ let isOver = false;
 let interval_id;
 
 const input_time = prompt("Escolha o tempo do timer: ");
-let current_time = parseInt(input_time, 10);
+let current_time
+if (isInt(input_time))
+    current_time = parseInt(input_time, 10);
+else
+    current_time = 60;
 
-function handleMainClick(e){
+function isInt(value) {
+    return !isNaN(value) &&
+        parseInt(Number(value)) == value &&
+        !isNaN(parseInt(value, 10));
+}
+
+function handleMainClick(e) {
     pop.play();
-    if(isPaused && !isOver){
+    if (isPaused && !isOver) {
         time_element.innerHTML = current_time;
         interval_id = setInterval(subtract, 1000);
         isPaused = false;
         icon_element.innerHTML = "pause";
     }
-    else{
+    else {
         current_time = input_time;
         time_element.innerHTML = current_time;
         clearInterval(interval_id)
@@ -110,10 +120,9 @@ function handleMainClick(e){
     }
 }
 
-function handleControlClick(e){
+function handleControlClick(e) {
     pop.play();
-    if(isOver)
-    {
+    if (isOver) {
         current_time = input_time;
         time_element.innerHTML = current_time;
         clearInterval(interval_id)
@@ -122,31 +131,30 @@ function handleControlClick(e){
         isOver = false;
         icon_element.innerHTML = "pause";
     }
-    else if(isPaused)
-    {
+    else if (isPaused) {
         time_element.innerHTML = current_time;
         interval_id = setInterval(subtract, 1000);
         isPaused = false;
         icon_element.innerHTML = "pause";
-    }else{
+    } else {
         clearInterval(interval_id);
         isPaused = true;
         icon_element.innerHTML = "play_arrow";
     }
 }
 
-function subtract(){
+function subtract() {
     current_time--;
-    if(current_time == 0){
+    if (current_time == 0) {
         beeps.play()
         clearInterval(interval_id)
         isPaused = true;
         icon_element.innerHTML = "replay";
         isOver = true;
     }
-    if(current_time == input_time/2 || current_time == (input_time/2)-0.5)
+    if (current_time == input_time / 2 || current_time == (input_time / 2) - 0.5)
         pop.play();
-    else if(current_time <= 5 && current_time > 0)
+    else if (current_time <= 5 && current_time > 0)
         pop.play();
     time_element.innerHTML = current_time;
 }
