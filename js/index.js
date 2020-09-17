@@ -84,16 +84,22 @@ let beeps = new Audio("https://www.vitormouro.dev/timer/audio/beeps.mp3")
 main_button.addEventListener("click", handleMainClick);
 control_button.addEventListener("click", handleControlClick);
 
+
 let isPaused = true;
 let isOver = false;
 let interval_id;
+let input_time
+let current_time = 60
 
-const input_time = prompt("Escolha o tempo do timer: ");
-let current_time
-if (isInt(input_time))
-    current_time = parseInt(input_time, 10);
-else
-    current_time = 60;
+$('#modal').modal()
+$('#submit_time').click(() => {
+    input_time = $('#time_input').val()
+    if (isInt(input_time))
+        current_time = parseInt(input_time, 10);
+    else
+        current_time = 60;
+    $('#modal').modal('hide')
+})
 
 function isInt(value) {
     return !isNaN(value) &&
@@ -158,6 +164,33 @@ function subtract() {
         pop.play();
     time_element.innerHTML = current_time;
 }
+
+$('.red').click(() => { 
+    $('#main').css({"background-color": "red", "color": "white"});  
+})
+$('.blue').click(() => { 
+    $('#main').css({"background-color": "lightskyblue", "color": "white"}); 
+})
+$('.green').click(() => { 
+    $('#main').css({"background-color": "green", "color": "white"}); 
+})
+$('.purple').click(() => { 
+    $('#main').css({"background-color": "purple", "color": "white"}); 
+})
+$('.yellow').click(() => { 
+    $('#main').css({"background-color": "gold", "color": "white"}); 
+})
+$('.pink').click(() => { 
+    $('#main').css({"background-color": "pink", "color": "white"}); 
+})
+$('.white').click(() => { 
+    $('#main').css({"background-color": "white", "color": "black"}); 
+})
+$('.orange').click(() => { 
+    $('#main').css({"background-color": "orange", "color": "white"});  
+})
+
+
 
 
 

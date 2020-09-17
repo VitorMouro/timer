@@ -38,10 +38,74 @@ html, body {
     background-color: black;
     outline: none;
     border: none;
-    color: grey;
+    color: white;
     font-size: 40vw;
 }
 
 .material-icons-round {
     font-size: inherit !important;
+}
+
+#change_time {
+    position:fixed;
+    left:1vw;
+    bottom:1vw;
+    font-size: 6vh;
+    height: 15vw;
+    padding: 0;
+    width: 15vw;
+    text-align: center;
+    line-height: 50%;
+}
+
+#change_color {
+    position:fixed;
+    right:1vw;
+    bottom:1vw;
+    font-size: 6vh;
+    height: 15vw;
+    padding: 0;
+    width: 15vw;
+    text-align: center;
+    line-height: 50%;
+}
+
+.red {
+    background-color: red !important;
+    padding: 5% !important;
+}
+
+.blue {
+    background-color: lightskyblue !important;
+    padding: 5% !important;
+}
+
+.green {
+    background-color: green !important;
+    padding: 5% !important;
+}
+
+.yellow {
+    background-color: gold !important;
+    padding: 5% !important;
+}
+
+.pink {
+    background-color: pink !important;
+    padding: 5% !important;
+}
+
+.white {
+    background-color: white !important;
+    padding: 5% !important;
+}
+
+.orange {
+    background-color: orange !important;
+    padding: 5% !important;
+}
+
+.purple {
+    background-color: purple !important;
+    padding: 5% !important;
 }
