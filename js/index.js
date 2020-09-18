@@ -88,17 +88,23 @@ control_button.addEventListener("click", handleControlClick);
 let isPaused = true;
 let isOver = false;
 let interval_id;
-let input_time
+let input_time = 60
 let current_time = 60
 
 $('#modal').modal()
-$('#submit_time').click(() => {
+$('#submit_time').click((e) => {
     input_time = $('#time_input').val()
     if (isInt(input_time))
         current_time = parseInt(input_time, 10);
     else
         current_time = 60;
     $('#modal').modal('hide')
+})
+$('#time_input').keyup((e) => {
+    if(e.keyCode === 13){
+        e.preventDefault()
+        $('#submit_time').trigger('click');
+    }
 })
 
 function isInt(value) {
@@ -165,30 +171,109 @@ function subtract() {
     time_element.innerHTML = current_time;
 }
 
-$('.red').click(() => { 
+$('#red_button').click(() => { 
     $('#main').css({"background-color": "red", "color": "white"});  
 })
-$('.blue').click(() => { 
+$('#blue_button').click(() => { 
     $('#main').css({"background-color": "lightskyblue", "color": "white"}); 
 })
-$('.green').click(() => { 
+$('#green_button').click(() => { 
     $('#main').css({"background-color": "green", "color": "white"}); 
 })
-$('.purple').click(() => { 
-    $('#main').css({"background-color": "purple", "color": "white"}); 
+$('#black_button').click(() => { 
+    $('#main').css({"background-color": "black", "color": "white"}); 
 })
-$('.yellow').click(() => { 
+$('#yellow_button').click(() => { 
     $('#main').css({"background-color": "gold", "color": "white"}); 
 })
-$('.pink').click(() => { 
+$('#pink_button').click(() => { 
     $('#main').css({"background-color": "pink", "color": "white"}); 
 })
-$('.white').click(() => { 
+$('#white_button').click(() => { 
     $('#main').css({"background-color": "white", "color": "black"}); 
 })
-$('.orange').click(() => { 
+$('#orange_button').click(() => { 
     $('#main').css({"background-color": "orange", "color": "white"});  
 })
+
+$('#red_background').click(() => { 
+    $('#container').css({"background-color": "red"});  
+})
+$('#blue_background').click(() => { 
+    $('#container').css({"background-color": "lightskyblue"}); 
+})
+$('#green_background').click(() => { 
+    $('#container').css({"background-color": "green"}); 
+})
+$('#black_background').click(() => { 
+    $('#container').css({"background-color": "black"}); 
+})
+$('#yellow_background').click(() => { 
+    $('#container').css({"background-color": "gold"}); 
+})
+$('#pink_background').click(() => { 
+    $('#container').css({"background-color": "pink"}); 
+})
+$('#white_background').click(() => { 
+    $('#container').css({"background-color": "white"}); 
+})
+$('#orange_background').click(() => { 
+    $('#container').css({"background-color": "orange"});  
+})
+
+$('#red_time').click(() => { 
+    $('#main').css({"color": "red"});  
+})
+$('#blue_time').click(() => { 
+    $('#main').css({"color": "lightskyblue"}); 
+})
+$('#green_time').click(() => { 
+    $('#main').css({"color": "green"}); 
+})
+$('#black_time').click(() => { 
+    $('#main').css({"color": "black"}); 
+})
+$('#yellow_time').click(() => { 
+    $('#main').css({"color": "gold"}); 
+})
+$('#pink_time').click(() => { 
+    $('#main').css({"color": "pink"}); 
+})
+$('#white_time').click(() => { 
+    $('#main').css({"color": "white"}); 
+})
+$('#orange_time').click(() => { 
+    $('#main').css({"color": "orange"});  
+})
+
+$('#red_control').click(() => { 
+    $('#control').css({"color": "red"});  
+})
+$('#blue_control').click(() => { 
+    $('#control').css({"color": "lightskyblue"}); 
+})
+$('#green_control').click(() => { 
+    $('#control').css({"color": "green"}); 
+})
+$('#black_control').click(() => { 
+    $('#control').css({"color": "black"}); 
+})
+$('#yellow_control').click(() => { 
+    $('#control').css({"color": "gold"}); 
+})
+$('#pink_control').click(() => { 
+    $('#control').css({"color": "pink"}); 
+})
+$('#white_control').click(() => { 
+    $('#control').css({"color": "white"}); 
+})
+$('#orange_control').click(() => { 
+    $('#control').css({"color": "orange"});  
+})
+
+
+
+
 
 
 

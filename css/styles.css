@@ -35,7 +35,7 @@ html, body {
     height: 70vw;
     width: 70vw;
     align-self: center;
-    background-color: black;
+    background-color: transparent;
     outline: none;
     border: none;
     color: white;
@@ -105,7 +105,7 @@ html, body {
     padding: 5% !important;
 }
 
-.purple {
-    background-color: purple !important;
+.black {
+    background-color: black !important;
     padding: 5% !important;
 }
